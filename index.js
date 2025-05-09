@@ -5,7 +5,7 @@ const path = require("path");
 const connectDB = require("./utils/db");
 
 const app = express();
-const port = process.env.PORT || 4000;
+const port = process.env.PORT || 5001;
 
 // ✅ Allowed Origins
 const allowedOrigins = [
@@ -15,6 +15,7 @@ const allowedOrigins = [
   "https://broadium.us",
   "https://www.broadium.us" ,
   "http://localhost:3001",
+
   
     // Main Website (Live)
 ];
