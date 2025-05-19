@@ -13,7 +13,7 @@ const transporter = nodemailer.createTransport({
 const sendEmailToCompany = ({ email, name, phone, service, business, query }, res) => {
   // ✅ 1. Email to the Customer
   const customerMailOptions = {
-    from: `"Broadium Service" <noreply@zemalt.com>`,
+    from: `"Broadium Service" <noreply@broadium.us>`,
     to: email,
     subject: `Thank You for Reaching Out – Broadium Service`,
     html: `
@@ -61,7 +61,7 @@ const sendEmailToCompany = ({ email, name, phone, service, business, query }, re
 
   // ✅ 2. Email to the Admin
   const adminMailOptions = {
-    from: "noreply@zemalt.com",
+    from: "noreply@broadium.us",
     to: process.env.ADMIN_EMAIL,
     subject: `New Lead from ${name}`,
     html: `
@@ -82,6 +82,15 @@ const sendEmailToCompany = ({ email, name, phone, service, business, query }, re
                   <td style="padding: 20px; text-align: left; color: #333333;">
                     <p style="margin: 0; font-size: 16px;"><strong>Name:</strong> ${name}</p>
                     <p style="margin: 0; font-size: 16px;"><strong>Email:</strong> ${email}</p>
+                    <!-- Compose Email Button -->
+                  <p style="margin: 10px 0;">
+                    <a href="mailto:${email}?subject=Re: ${service}"
+                      style="display: inline-block; background-color: #007BFF; color: #FFFFFF;
+                      padding: 10px 20px; text-decoration: none; border-radius: 4px;
+                      font-size: 14px;">
+                      Compose Email
+                    </a>
+                  </p>
                     <p style="margin: 0; font-size: 16px;"><strong>Phone:</strong> ${phone}</p>
                     <p style="margin: 0; font-size: 16px;"><strong>Service:</strong> ${service}</p>
                     <p style="margin: 0; font-size: 16px;"><strong>Business:</strong> ${business}</p>

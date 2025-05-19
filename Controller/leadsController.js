@@ -51,7 +51,7 @@ const CreateLeads = async (req, res) => {
 
     return res.status(201).json({
       status: 201,
-      message: "Lead created and request sent successfully",
+      message: "Request sent successfully",
     });
   } catch (err) {
     console.error(err);
