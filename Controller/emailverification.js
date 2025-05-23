@@ -139,4 +139,3 @@ const sendEmailToCompany = (
 };
 
 module.exports = sendEmailToCompany;
-x;
