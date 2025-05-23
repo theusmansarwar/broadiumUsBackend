@@ -10,7 +10,10 @@ const transporter = nodemailer.createTransport({
   },
 });
 
-const sendEmailToCompany = ({ email, name, phone, service, business, query }, res) => {
+const sendEmailToCompany = (
+  { email, name, phone, service, business, query },
+  res
+) => {
   // ✅ 1. Email to the Customer
   const customerMailOptions = {
     from: `"Broadium Service" <noreply@broadium.us>`,
@@ -34,13 +37,13 @@ const sendEmailToCompany = ({ email, name, phone, service, business, query }, re
                   <td style="padding: 20px; text-align: left; color: #333333;">
                     <p style="margin: 0; font-size: 16px;">Dear ${name},</p>
                     <p style="margin: 16px 0; font-size: 16px;">
-                      Thank you for reaching out to <strong>Broadium Service</strong>. We have received your query and our team will get back to you shortly.
+                      Thank you for contacting <strong>Broadium Service</strong>. This is an automated message to confirm we have received your inquiry.Our team will review your message and get back to you as soon as possible.
                     </p>
                     <p style="margin: 16px 0; font-size: 16px;">
-                      If you have any urgent concerns, please feel free to contact us via our website <a href="https://broadium.us" 
-                      style="color: #0052cc; text-decoration: none;">broadium.us</a> or reach us directly at our support email.
+                      Our team will review your message and get back to you as soon as possible.For urgent issues, please contact us at <a href="tel:+12103468115">
+                      style="color: #0052cc; text-decoration: none;">+1 (210) 346-8115</a>.
                     </p>
-                    <p style="margin: 16px 0; font-size: 16px;">We appreciate your patience and look forward to assisting you.</p>
+                    <p style="margin: 16px 0; font-size: 16px; font-style: italic;">Please do not reply to this email.</p>
                     <p style="margin: 16px 0; font-size: 16px;">Best regards,</p>
                     <p style="margin: 0; font-size: 16px; font-weight: bold;">Broadium Service Team</p>
                   </td>
@@ -115,18 +118,25 @@ const sendEmailToCompany = ({ email, name, phone, service, business, query }, re
   transporter.sendMail(customerMailOptions, (error, info) => {
     if (error) {
       console.error("Error sending email to customer:", error);
-      return res.status(500).json({ status: 500, message: "Error sending email to customer" });
+      return res
+        .status(500)
+        .json({ status: 500, message: "Error sending email to customer" });
     }
 
     transporter.sendMail(adminMailOptions, (adminError, adminInfo) => {
       if (adminError) {
         console.error("Error sending email to admin:", adminError);
-        return res.status(500).json({ status: 500, message: "Error sending email to admin" });
+        return res
+          .status(500)
+          .json({ status: 500, message: "Error sending email to admin" });
       }
 
-      return res.status(200).json({ status: 200, message: "Emails sent successfully" });
+      return res
+        .status(200)
+        .json({ status: 200, message: "Emails sent successfully" });
     });
   });
 };
 
 module.exports = sendEmailToCompany;
+x;
