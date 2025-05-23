@@ -40,7 +40,7 @@ const sendEmailToCompany = (
                       Thank you for contacting <strong>Broadium Service</strong>. This is an automated message to confirm we have received your inquiry.Our team will review your message and get back to you as soon as possible.
                     </p>
                     <p style="margin: 16px 0; font-size: 16px;">
-                      Our team will review your message and get back to you as soon as possible.For urgent issues, please contact us at <a href="tel:+12103468115">
+                      Our team will review your message and get back to you as soon as possible.For urgent issues, please contact us at <a href="tel:+12103468115"
                       style="color: #0052cc; text-decoration: none;">+1 (210) 346-8115</a>.
                     </p>
                     <p style="margin: 16px 0; font-size: 16px; font-style: italic;">Please do not reply to this email.</p>
