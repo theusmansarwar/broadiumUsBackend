@@ -37,7 +37,7 @@ const sendEmailToCompany = (
                   <td style="padding: 20px; text-align: left; color: #333333;">
                     <p style="margin: 0; font-size: 16px;">Dear ${name},</p>
                     <p style="margin: 16px 0; font-size: 16px;">
-                      Thank you for contacting <strong>Broadium Service</strong>. This is an automated message to confirm we have received your inquiry.Our team will review your message and get back to you as soon as possible.
+                      Thank you for contacting <strong>Broadium Service</strong>. This is an automated message to confirm we have received your inquiry.
                     </p>
                     <p style="margin: 16px 0; font-size: 16px;">
                       Our team will review your message and get back to you as soon as possible.For urgent issues, please contact us at <a href="tel:+12103468115"
